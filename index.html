@@ -46,6 +46,14 @@
       filter: drop-shadow(0px 18px 40px rgba(0, 0, 0, 0.07)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.07));
     }
     
+    .box-shadow .list {
+      box-shadow: 0 14px 50px 6px rgba(0, 0, 0, 0.07), 0 14px 50px 6px rgba(0, 0, 0, 0.07);
+    }
+    
+    .box-shadow .list__item {
+      box-shadow: 0 14px 50px 6px rgba(0, 0, 0, 0.07), 0 14px 50px 6px rgba(0, 0, 0, 0.07);
+    }
+    
     .header {
       position: fixed;
       z-index: 2;
@@ -73,6 +81,7 @@
 
 <body>
   <div class="header">
+  <button class="button button-3" type="button">📦</button>
     <button class="button button-1" type="button">🤔</button>
      <button class="button button-2" type="button">💩</button>
   </div>
@@ -168,6 +177,7 @@
   <script>
     const button1 = document.querySelector('.button-1');
     const button2 = document.querySelector('.button-2');
+    const button3 = document.querySelector('.button-3');
     
     button1.addEventListener('click', () => {
       document.body.classList.toggle('list-shadow');
@@ -177,6 +187,11 @@
     button2.addEventListener('click', () => {
       document.body.classList.toggle('list-item-shadow');
       button2.classList.toggle('button--active');
+    });
+    
+    button3.addEventListener('click', () => {
+      document.body.classList.toggle('box-shadow');
+      button3.classList.toggle('button--active');
     });
   </script>
 </body>
