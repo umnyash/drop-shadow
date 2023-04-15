@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Drop Shadow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+  <style>
+    body {
+      display: grid;
+      row-gap: 30px;
+    }
+    
+    .list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px 20px;
+      margin: 0 0 10px;
+      padding: 0;
+      list-style: none;
+    }
+    
+    .list__item {
+      box-sizing: border-box;
+      height: 100px;
+     }
+     
+    .list--primary .list__item {
+      background-color: maroon;
+    }
+    
+    .list--secondary .list__item {
+      background-color: darkslategray;
+    }
+    
+    .list--bordered .list__item {
+      border: 2px solid black;
+    }
+    
+    .list-shadow .list {
+      filter: drop-shadow(0px 18px 40px rgba(0, 0, 0, 0.07)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.07));
+    }
+        
+    .list-item-shadow .list__item {
+      filter: drop-shadow(0px 18px 40px rgba(0, 0, 0, 0.07)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.07));
+    }
+    
+    .header {
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      background-color: grey;
+    }
+    
+    .button {
+      margin: 0 20px;
+      font-size: 25px;
+      line-height: 1;
+      opacity: 0.6;
+      background-color: white;
+     }
+     
+     .button--active {
+      opacity: 1;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <button class="button button-1" type="button">🤔</button>
+     <button class="button button-2" type="button">💩</button>
+  </div>
+  
+  <ul class="list list--primary">
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+  </ul>
+  
+  <ul class="list list--bordered">
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+  </ul>
+  
+  <ul class="list list--secondary">
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+  </ul>
+  
+  <ul class="list list--bordered">
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+  </ul>
+  
+  <ul class="list list--primary">
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+  </ul>
+  
+  <ul class="list list--bordered">
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+  </ul>
+  
+  <ul class="list list--secondary">
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+  </ul>
+  
+  <ul class="list list--bordered">
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+    <li class="list__item"></li>
+  </ul>
+  
+  <script>
+    const button1 = document.querySelector('.button-1');
+    const button2 = document.querySelector('.button-2');
+    
+    button1.addEventListener('click', () => {
+      document.body.classList.toggle('list-shadow');
+      button1.classList.toggle('button--active');
+    });
+    
+    button2.addEventListener('click', () => {
+      document.body.classList.toggle('list-item-shadow');
+      button2.classList.toggle('button--active');
+    });
+  </script>
+</body>
+
+</html>
